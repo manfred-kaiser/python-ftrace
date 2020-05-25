@@ -4,6 +4,8 @@
 
 At this time it is only compatible with Kernel Version <=4!
 
+```Diese Bibliothek wurde im Rahmen der Diplomarbeit "Proaktive Erkennung von Angriffen auf Endgeräte anhand von Debugging-Informationenvon Systemcalls des Linux Kernels" von Toifl überarbeitet und als Open Source zur Verfügung gestellt.```
+
 
 ## Installation
 
