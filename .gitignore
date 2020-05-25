@@ -1,0 +1,10 @@
+*.pyc
+.idea/
+*.egg-info
+dist/
+tags
+docs/source/modules
+.vscode/
+.mypy_cache/
+doc/source/modules/
+build

@@ -1,0 +1,86 @@
+
+
+	struct addrinfo {
+  	  int ai_flags;                 /* Input flags.  */
+  	  int ai_family;                /* Protocol family for socket.  */
+  	  int ai_socktype;              /* Socket type.  */
+  	  int ai_protocol;              /* Protocol for socket.  */
+  	  socklen_t ai_addrlen;         /* Length of socket address.  */
+  	  struct sockaddr *ai_addr;     /* Socket address for socket.  */
+  	  char *ai_canonname;           /* Canonical name for service location.  */
+  	  struct addrinfo *ai_next;     /* Pointer to next in list.  */
+	};
+
+	
+
+	struct sockaddr_in6 {
+          u_char           sin6_len;      /* length of this structure */
+          u_char           sin6_family;   /* AF_INET6                 */
+          u_int16m_t       sin6_port;     /* Transport layer port #   */
+          u_int32m_t       sin6_flowinfo; /* IPv6 flow information    */
+          struct in6_addr  sin6_addr;     /* IPv6 address             */
+  	};
+
+	struct in6_addr {
+           u_int8_t  s6_addr[16];  /* IPv6 address */
+   	}
+
+
+	struct sockaddr_in {
+    	  short            sin_family;   // e.g. AF_INET
+          unsigned short   sin_port;     // e.g. htons(3490)
+          struct in_addr   sin_addr;     // see struct in_addr, below
+          char             sin_zero[8];  // zero this if you want to
+        };
+
+	struct in_addr {
+    	  unsigned long s_addr;  // load with inet_aton()
+	};
+
+
+
+
+	struct addrinfo {
+  	  int ai_flags;                 
+  	  int ai_family;                
+  	  int ai_socktype;              
+  	  int ai_protocol;              
+  	  socklen_t ai_addrlen;         
+  	  struct sockaddr *ai_addr;     
+  	  char *ai_canonname;          
+  	  struct addrinfo *ai_next;    
+	};
+
+	
+
+	struct sockaddr_in6 {  
+          u_char           sin6_family;   
+          u_int16m_t       sin6_port;     
+          u_int32m_t       sin6_flowinfo; 
+          struct in6_addr  sin6_addr;     
+  	};
+
+
+
+	struct in6_addr {
+           u_int8_t  s6_addr[16];  
+   	}
+
+
+
+
+	struct sockaddr_in {
+    	  short            sin_family;  
+          unsigned short   sin_port;    
+          struct in_addr   sin_addr;   
+          char             sin_zero[8]; 
+        };
+
+
+
+	struct in_addr {
+    	  unsigned long s_addr; 
+	};
+
+
+	
