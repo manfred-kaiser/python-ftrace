@@ -1,6 +1,6 @@
-# Python ftrace
+# Python ftrace Library
 
-`python-ftrace` is a library to read ftrace data from the Linux Kernel.
+`ftrace` is a python library to read ftrace data from the Linux Kernel.
 
 At this time it is only compatible with Kernel Version <=4!
 
