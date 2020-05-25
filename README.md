@@ -1,6 +1,3 @@
-[![Build Status](https://travis-ci.org/theelous3/asks.svg?branch=master)](https://travis-ci.org/theelous3/asks) [![Docs Status](https://readthedocs.org/projects/asks/badge/?version=latest)](http://asks.readthedocs.io/en/latest/)
-
-
 # Python ftrace
 
 `python-ftrace` is a library to read ftrace data from the Linux Kernel.
