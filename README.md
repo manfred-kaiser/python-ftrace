@@ -1,0 +1,52 @@
+[![Build Status](https://travis-ci.org/theelous3/asks.svg?branch=master)](https://travis-ci.org/theelous3/asks) [![Docs Status](https://readthedocs.org/projects/asks/badge/?version=latest)](http://asks.readthedocs.io/en/latest/)
+
+
+# Python ftrace
+
+`python-ftrace` is a library to read ftrace data from the Linux Kernel.
+
+At this time it is only compatible with Kernel Version <=4!
+
+
+## Installation
+
+`pip install ftrace`
+
+
+## Example
+
+When a new process is created the name, pid and parent pid will be printed.
+
+```python
+# -*- coding: utf-8 -*-
+import ftrace
+
+def main():
+    processes = {}
+
+    ftrace = ftrace.FTrace()
+    ftrace.tracer = ftrace.tracers.NopTracer()
+    ftrace.reset()
+    ftrace.setup()
+    ftrace.tracer.syscalls = [
+        ftrace.syscalls.Sys_Execve(),
+        ftrace.syscalls.Sched_Process_Fork()
+    ]
+
+    print("pid  ppid: name")
+
+    try:
+        for data in ftrace.get_output():
+            if (data is not None and data["kname"] == "sys_execve_kprobe"):
+                print("{} {}: {}".format(data["caller_pid"], processes[data["caller_pid"]] if (data["caller_pid"] in processes) else "----", data["filename"]))
+            elif (data["kname"] == "sched_process_fork"):
+                processes[data["called_pid"]] = data["caller_pid"]
+    except KeyboardInterrupt:
+        print("\nstopping...")
+
+    ftrace.reset()
+
+
+if __name__ == "__main__":
+    main()
+```
