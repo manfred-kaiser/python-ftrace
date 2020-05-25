@@ -15,7 +15,6 @@ At this time it is only compatible with Kernel Version <=4!
 When a new process is created the name, pid and parent pid will be printed.
 
 ```python
-# -*- coding: utf-8 -*-
 import ftrace
 
 def main():

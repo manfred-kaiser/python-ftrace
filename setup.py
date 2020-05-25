@@ -15,7 +15,7 @@ setup(
     author_email='manfred.kaiser@logfile.at',
     description='library for reading ftrace data',
     long_description=long_description,
-    long_description_content_type='text/x-rst',
+    long_description_content_type='text/markdown',
     python_requires='>= 3.5',
     packages=find_packages(),
     url="https://github.com/manfred-kaiser/python-ftrace",
