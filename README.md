@@ -1,5 +1,10 @@
 # Python ftrace Library
 
+[![PyPI version](https://img.shields.io/pypi/v/ftrace.svg?logo=pypi&logoColor=FFE873)](https://pypi.org/project/ftrace/)
+[![Supported Python versions](https://img.shields.io/pypi/pyversions/ftrace.svg?logo=python&logoColor=FFE873)](https://pypi.org/project/ftrace/)
+[![PyPI downloads](https://img.shields.io/pypi/dm/ftrace.svg)](https://pypistats.org/packages/ftrace)
+[![GitHub](https://img.shields.io/github/license/manfred-kaiser/python-ftrace.svg)](LICENSE)
+
 `ftrace` is a python library to read ftrace data from the Linux Kernel.
 
 At this time it is only compatible with Kernel Version <=4!
