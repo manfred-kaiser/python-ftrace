@@ -23,7 +23,6 @@ class SockAddr(object):
             return address
         # Other
         return (None, None)
-        return (None, None)
 
     @classmethod
     def mem2addr(cls, family, mem_ipv4, mem_ipv6_1, mem_ipv6_2, mem_port):
