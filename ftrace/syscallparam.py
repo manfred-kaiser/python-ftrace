@@ -9,7 +9,6 @@ def cap_user_header(value_list):
     Noch nicht implementiert.
     Siehe SysCallParser.ip_adress_parsing()
     '''
-    pass
 
 
 class SysCallParam(Enum):

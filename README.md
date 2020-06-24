@@ -1,5 +1,6 @@
 # Python ftrace Library
 
+[![CodeFactor](https://www.codefactor.io/repository/github/manfred-kaiser/python-ftrace/badge)](https://www.codefactor.io/repository/github/manfred-kaiser/python-ftrace)
 [![Github version](https://img.shields.io/github/v/release/manfred-kaiser/python-ftrace?label=github&logo=github)](https://github.com/manfred-kaiser/python-ftrace/releases)
 [![PyPI version](https://img.shields.io/pypi/v/ftrace.svg?logo=pypi&logoColor=FFE873)](https://pypi.org/project/ftrace/)
 [![Supported Python versions](https://img.shields.io/pypi/pyversions/ftrace.svg?logo=python&logoColor=FFE873)](https://pypi.org/project/ftrace/)

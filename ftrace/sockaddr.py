@@ -17,13 +17,12 @@ class SockAddr(object):
             # addrinfo block
             address = cls.mem2addr(syscall_infos["info_family"], syscall_infos["info_ipv4"], syscall_infos["info_ipv6_1"], syscall_infos["info_ipv6_2"], syscall_infos["info_port"])
             return address
-        elif syscall_infos["sock_family"] in [2, 10]:
+        if syscall_infos["sock_family"] in [2, 10]:
             # sockaddr_in or sockaddr_in6 block
             address = cls.mem2addr(syscall_infos["sock_family"], syscall_infos["sock_ipv4"], syscall_infos["sock_ipv6_1"], syscall_infos["sock_ipv6_2"], syscall_infos["sock_port"])
             return address
-        else:
-            # Other
-            return (None, None)
+        # Other
+        return (None, None)
         return (None, None)
 
     @classmethod
@@ -43,22 +42,22 @@ class SockAddr(object):
         return (address, port)
 
     @classmethod
-    def int2ipv4(cls, input):
+    def int2ipv4(cls, value):
         # big endian to little endian
-        new_int = struct.unpack("<L", input.to_bytes((input.bit_length() + 7) // 8, 'big'))[0]
+        new_int = struct.unpack("<L", value.to_bytes((value.bit_length() + 7) // 8, 'big'))[0]
         return str(ipaddress.IPv4Address(new_int))
 
     @classmethod
-    def int2ipv6(cls, input1, input2):
-        def orderIPv6(input):
-            array = [input[i:i + 8] for i in range(0, len(input), 8)]
+    def int2ipv6(cls, value1, value2):
+        def orderIPv6(value):
+            array = [value[i:i + 8] for i in range(0, len(value), 8)]
             ret = ""
             for x in reversed(array):
                 ret += x
             return ret
 
-        bin_ipv6_1 = '{0:064b}'.format(input1)
-        bin_ipv6_2 = '{0:064b}'.format(input2)
+        bin_ipv6_1 = '{0:064b}'.format(value1)
+        bin_ipv6_2 = '{0:064b}'.format(value2)
         part1 = orderIPv6(bin_ipv6_1)
         part2 = orderIPv6(bin_ipv6_2)
         conv_bin = str(part1) + str(part2)

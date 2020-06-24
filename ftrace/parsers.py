@@ -13,7 +13,6 @@ class Parser(object):
         zur Verfügung steht, und ist dafür verantwortlich, die darin enthaltenen Informationen
         bereitzustellen.
         '''
-        pass
 
 
 class SysCallParser(Parser):

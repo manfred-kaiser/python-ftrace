@@ -68,10 +68,9 @@ class PWDFile(object):
 
                 if (val in ["true", "1", "yes"]):
                     return True
-                elif (val in ["false", "0", "no"]):
+                if (val in ["false", "0", "no"]):
                     return False
-                else:
-                    raise ValueError("read_bool(): couldn't convert \"{}\" into bool".format(val))
+                raise ValueError("read_bool(): couldn't convert \"{}\" into bool".format(val))
         except FileNotFoundError:
             raise
         except ValueError:

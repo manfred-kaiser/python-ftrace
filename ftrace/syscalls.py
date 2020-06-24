@@ -166,7 +166,7 @@ class SysCall(object):
         if (not val and self.enabled):
             raise ValueError("Setting registered to false is only possible if enabled is false")
 
-        with open("/sys/kernel/debug/tracing/kprobe_events"):  # TODO: why is this file not used?
+        with open("/sys/kernel/debug/tracing/kprobe_events"):  # why is this file not used?
             self._file_set_kprobes.write("{}{}".format(self._file_set_kprobes.read(), (self.kprobe if val else "-:kprobes/{}".format(self.kname))))  # "appends" string by writing whole file again, using writing mode 'a' did not work, check for better solution
 
     @property
