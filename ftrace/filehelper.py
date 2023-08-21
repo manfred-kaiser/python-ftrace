@@ -34,8 +34,13 @@ class PWDFile(object):
 
         try:
             with open(self.path, writing_mode) as f:
+                print(self.path)
+                print(os.path.exists(self.path))
                 f.write(txt)
         except FileNotFoundError:
+            print("-------------------------------------")
+            print(writing_mode)
+            print(self.path)
             raise
         except Exception:
             raise WriteFileException("Unable to write to {} with mode \"{}\"-> Value: {}".format(self.path, writing_mode, val))
